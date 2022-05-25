@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  nodejs:
+    container_name: nodejs
+    build: .
+    ports:
+      - "3000:3000"
+
+  memcached:
+    container_name: memcached
+    image: bitnami/memcached:1.6.15
+    ports:
+      - "11211:11211"
+
+  memcached2:
+    container_name: memcached2
+    image: bitnami/memcached:1.6.15
+    ports:
+      - "11311:11211"
+
+  memcached3:
+    container_name: memcached3
+    image: bitnami/memcached:1.6.15
+    ports:
+      - "11411:11211"
