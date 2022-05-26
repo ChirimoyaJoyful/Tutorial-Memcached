@@ -1,13 +1,13 @@
 const express = require('express');
 const memjs = require('memjs');
 const axios = require("axios");
-const client = memjs.Client.create('memcached:11211','memcached2:11311','memcached3:11411');
-
+const client = memjs.Client.create('memcached:11211');
+const responseTime = require("response-time");
 
 const port = 3000;
 const app = express();
 
-
+app.use(responseTime());
 
 app.get("/character/:id", async(req,res,next) =>{
     try {
